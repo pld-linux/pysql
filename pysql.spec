@@ -45,5 +45,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog* README
 %attr(755,root,root) %{_bindir}/*
+%dir %{py_sitescriptdir}/%{name}
 %{py_sitescriptdir}/%{name}/*.py[co]
 %{py_sitescriptdir}/*.egg-info
