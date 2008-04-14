@@ -1,4 +1,5 @@
 Summary:	A full (and much more) replacement for sqlplus
+Summary(pl.UTF-8):	Pełny (a nawet lepszy) zamiennik sqlplus
 Name:		pysql
 Version:	0.11
 Release:	1
@@ -7,30 +8,43 @@ Group:		Applications/Databases
 Source0:	http://dl.sourceforge.net/pysql/%{name}-%{version}.tar.gz
 # Source0-md5:	35a3afa6c383dac8d9a8a4229b2da06b
 URL:		http://pysql.sourceforge.net/
+BuildRequires:	python >= 1:2.5
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python-cx_Oracle
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-PySQL aim to be a full (and much more) replacement for sqlplus.
-This projet start the 17th of august 2006. It is also a cool
-pretext for coding in Python ;-) Some ideas behind PySQL :
-
-* really usable and not painfull (history, completion, line edition...)
-* high level function often used (search for tables, indexes, count,
+PySQL aim to be a full (and much more) replacement for sqlplus. Some
+ideas behind PySQL:
+- really usable and not painful (history, completion, line edition...)
+- high level function often used (search for tables, indexes, count,
   explain plan, list of sessions...)
-* proper output for screen and file (csv ready for inclusion in spreadsheets)
-* user defined macro ?
+- proper output for screen and file (csv ready for inclusion in
+  spreadsheets)
+- user defined macro ?
+
+%description -l pl.UTF-8
+PySQL jest w zamierzeniu pełnym (a nawet o wiele lepszym) zamiennikiem
+narzędzia sqlplus. Niektóre idee PySQL-a:
+- prawdziwa użyteczność bez bólu (historia, dopełnianie, edycja linii
+  poleceń...)
+- częste używanie funkcji wysokopoziomowych (wyszukiwanie tabel,
+  indeksów, zliczanie, plan explain, lista sesji...)
+- właściwe wyjście dla screena i pliku (zgodność z CSV do umieszczania
+  w arkuszach kalkulacyjnych)
+- zdefiniowane przez użytkownika makro ?
 
 %prep
 %setup -q
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install \
+%{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
