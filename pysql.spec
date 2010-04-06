@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/pysql/%{name}-%{version}.tar.gz
 # Source0-md5:	cfaef3afa0d7eaef2074f48b2a9df238
 URL:		http://pysql.sourceforge.net/
 BuildRequires:	python >= 1:2.5
+BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	python-cx_Oracle
