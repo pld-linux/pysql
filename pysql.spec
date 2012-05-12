@@ -2,7 +2,7 @@ Summary:	A full (and much more) replacement for sqlplus
 Summary(pl.UTF-8):	Pełny (a nawet lepszy) zamiennik sqlplus
 Name:		pysql
 Version:	0.14
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Applications/Databases
 Source0:	http://dl.sourceforge.net/pysql/%{name}-%{version}.tar.gz
